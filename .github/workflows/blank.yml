@@ -2,6 +2,7 @@ name: Callie
 
 on:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   pass-secret-to-action:
