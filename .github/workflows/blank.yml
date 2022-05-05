@@ -12,4 +12,7 @@ jobs:
         run: echo -n ${{ secrets.TEST }} | od -A n -t x1
         
   test:
-   uses: niccky7/xyz/.github/workflows/blank.yml@main
+   runs-on: ubuntu-latest
+   steps:
+    - name: testing
+      run: echo "yoyo"
