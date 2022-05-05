@@ -10,3 +10,6 @@ jobs:
     steps:
       - name: Use a repo or org secret from the calling workflow.
         run: echo -n ${{ secrets.TEST }} | od -A n -t x1
+        
+  test:
+   uses: niccky7/xyz/.github/workflows/blank.yml@main
