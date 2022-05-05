@@ -1,0 +1,12 @@
+name: Callie
+
+on:
+  workflow_call:
+ 
+
+jobs:
+  test:
+   runs-on: ubuntu-latest
+   steps:
+    - name: testing
+      run: echo "yoyo"
