@@ -12,5 +12,5 @@ jobs:
         run: echo -n ${{ secrets.TEST }} | od -A n -t x1
         
   test:
-   uses: ./.github/workflows/blank2.yml@main
+   uses: ./.github/workflows/blank2.yml
       
