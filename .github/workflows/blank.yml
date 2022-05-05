@@ -13,6 +13,9 @@ jobs:
         
   test:
    runs-on: ubuntu-latest
+   permissions: 
+        issues: write
    steps:
     - name: testing
       run: echo "yoyo"
+      
