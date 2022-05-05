@@ -12,10 +12,5 @@ jobs:
         run: echo -n ${{ secrets.TEST }} | od -A n -t x1
         
   test:
-   runs-on: ubuntu-latest
-   permissions: 
-        issues: write
-   steps:
-    - name: testing
-      run: echo "yoyo"
+   uses: ./.github/workflows/blank2.yml@main
       
