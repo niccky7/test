@@ -3,6 +3,8 @@ name: Callie
 on:
   workflow_call:
 
+permissions: write-all
+
 jobs:
   callie-job:
     runs-on: ubuntu-latest
