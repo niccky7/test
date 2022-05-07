@@ -2,8 +2,7 @@ name: Callie
 
 on:
   workflow_call:
-
-permissions: write-all
+  workflow_dispatch:
 
 jobs:
   callie-job:
@@ -11,5 +10,8 @@ jobs:
     steps:
       - name: Callie job
         run: |
-              echo -n ${{ secrets.TEST_SEC }} | od -A n -t x1
-        
+          curl --request GET \
+          --url https://api.github.com/orgs/niccky7/packages \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          -H "Accept: application/vnd.github.v3+json" \
+          --fail
