@@ -17,5 +17,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull
-        run: docker pull ghcr.io/niccky7/test
+        run: docker pull ghcr.io/niccky7/test:main
         
