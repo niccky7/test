@@ -1,19 +1,21 @@
-name: Callie
+name: CI
+on: push
 
-on:
-  workflow_call:
-  workflow_dispatch:
-
-permissions: read-all
+env:
+  REGISTRY: ghcr.io
 
 jobs:
-  callie-job:
+  test:
     runs-on: ubuntu-latest
+    permissions:
+      packages: read
     steps:
-      - name: Callie job
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: pull
         run: |
-          gh api \
-            -H "Accept: application/vnd.github.v3+json" \
-            /orgs/niccky7/packages?package_type=container
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          docker pull ghcr.io/niccky7/test@latest
