@@ -7,9 +7,8 @@ on:
 jobs:
   pass-secret-to-action:
     runs-on: ubuntu-latest
-    environment: production
     steps:
       - name: Callie job
         run: |
-              echo "I'm OLD!"
+              echo "I'm NEW!"
         
