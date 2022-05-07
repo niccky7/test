@@ -8,4 +8,4 @@ jobs:
   sup:
     uses: niccky7/test/.github/workflows/blank.yml@main
     secrets: inherit
-    permissions: write-all
+    permissions: read-all
