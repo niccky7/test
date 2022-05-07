@@ -2,14 +2,14 @@ name: Callie
 
 on:
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   pass-secret-to-action:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Uses a repo or org secret from the calling workflow.
+      - name: Callie job
         run: |
-              echo -n ${{ secrets.TEST }} | od -A n -t x1
-              echo -n ${{ secrets.ENV_TEST }} | od -A n -t x1
-              echo -n ${{ secrets.ORG_TEST }} | od -A n -t x1
+              echo "I'm OLD!"
         
