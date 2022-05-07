@@ -3,6 +3,8 @@ name: Callie
 on:
   pull_request:
   
+permissions: write-all
+
 
 jobs:
   callie-job:
