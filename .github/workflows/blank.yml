@@ -1,21 +1,19 @@
-name: CI
-on: push
+name: ci
 
-env:
-  REGISTRY: ghcr.io
+on:
+  push:
+    branches: main
 
 jobs:
-  test:
+  login:
     runs-on: ubuntu-latest
-    permissions:
-      packages: read
     steps:
-      - name: Log in to the Container registry
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
-          registry: ${{ env.REGISTRY }}
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: pull
-        run: |
-          docker pull ghcr.io/niccky7/test@latest
+      - name: Pull
+        run: docker pull ghcr.io/niccky7/test
+        
