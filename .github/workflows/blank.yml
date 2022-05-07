@@ -2,10 +2,10 @@ name: Callie
 
 on:
   workflow_call:
-  workflow_dispatch:
+  
 
 jobs:
-  pass-secret-to-action:
+  callie-job:
     runs-on: ubuntu-latest
     steps:
       - name: Callie job
