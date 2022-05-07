@@ -1,7 +1,7 @@
 name: Callie
 
 on:
-  workflow_call:
+  pull_request:
   
 permissions: 
    pages: write
