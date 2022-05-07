@@ -14,6 +14,6 @@ jobs:
         run: |
           gh api \
             -H "Accept: application/vnd.github.v3+json" \
-            /orgs/niccky7/packages?package_type=container
+            /orgs/niccky7/packages?package_type=docker
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
