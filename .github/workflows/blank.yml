@@ -3,6 +3,8 @@ name: Callie
 on:
   workflow_call:
   
+permissions: 
+   pages: write
 
 jobs:
   callie-job:
