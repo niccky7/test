@@ -1,13 +1,10 @@
-name: Callie
+name: Caller
 
 on:
-  workflow_call:
+  workflow_dispatch:
+  pull_request:
 
 jobs:
-  callie-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Callie job
-        run: |
-              echo -n ${{ secrets.TEST_SEC }} | od -A n -t x1
-        
+  sup:
+    uses: niccky7/test/.github/workflows/blank.yml@main
+    secrets: inherit
