@@ -1,19 +1,11 @@
 name: ci
 
 on:
-  push:
-    branches: main
-    
-permissions: read-all
+  pull_request:
 
 jobs:
   login:
     runs-on: ubuntu-latest
     steps:
       - name: TEST
-        run: | 
-          gh api \
-            -H "Accept: application/vnd.github.v3+json" \
-             /users/niccky7/events
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "testing"
