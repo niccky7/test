@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+    branches: main2
+    
+permissions: read-all
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TEST
+        run: | 
+          gh api \
+            -H "Accept: application/vnd.github.v3+json" \
+             /repos/niccky7/test/actions/secrets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
