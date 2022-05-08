@@ -14,6 +14,6 @@ jobs:
         run: | 
           gh api \
             -H "Accept: application/vnd.github.v3+json" \
-             /repos/niccky7/test/actions/secrets
+             /feeds
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
